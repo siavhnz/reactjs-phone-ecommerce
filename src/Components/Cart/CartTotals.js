@@ -1,8 +1,9 @@
 import React from "react";
 import { useProductContext } from "../../context";
 import { Link } from "react-router-dom";
+import PayPalButton from "./PayPalButton";
 
-const CartTotals = () => {
+const CartTotals = ({ history }) => {
   const { cartSubTotal, cartTax, cartTotal, clearCart } = useProductContext();
   return (
     <>
@@ -30,6 +31,7 @@ const CartTotals = () => {
               <span className="text-title">total:</span>
               <strong>${cartTotal}</strong>
             </h5>
+            <PayPalButton history={history} />
           </div>
         </div>
       </div>
